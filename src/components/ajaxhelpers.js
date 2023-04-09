@@ -44,14 +44,3 @@ export const removePuppy = async (dogId) => {
      console.error(error);   
     }
 };
-
-// try {
-//     const response = await fetch(`https://fsa-puppy-bowl.herokuapp.com/api/2303-ftb-et-web-fte-react/players`);
-    
-//     const {succes, error, data} = await response.json();
-//     const {players} = data;
-//     setDogs(players);
-// }
-// catch (error) {
-//     console.error(error);
-// }

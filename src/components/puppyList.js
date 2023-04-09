@@ -23,6 +23,9 @@ import { getPuppyList } from './ajaxhelpers';
 //     </>
 //         )
 // }
+const searchDogs = (listOfPuppys, searchTerm) => {
+return listOfPuppys.filter(puppy => puppy.name.toLowerCase().includes(searchTerm.toLowerCase()));
+}
 
 const PuppyList = () => { 
     const [dogs, setDogs] = useState([]);
@@ -30,16 +33,14 @@ const PuppyList = () => {
 
     useEffect(() => {
        const fetchPuppys = async () => {
-        const players = await getPuppyList();
+           const players = await getPuppyList();
+           
+            const searchedPuppy = searchDogs(players, 'bert' )
+            console.log(searchedPuppy)
         setDogs(players)
     };
     fetchPuppys()
     
-    // const searchDogs = (listOfPuppys, searchTerm) => {
-    //     listOfPuppys.filter.toLowerCase().includes(searchterm.toLowerCase());
-    // }
-    // const searchedPuppy = searchDogs({players}, 'bert' )
-    // console.log(searchedPuppy)
     
 }, [])
 
